@@ -70,113 +70,98 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Row(
-        children:[ Column(
+      body: Column(
+        children:[ Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'you want to calculat: ',
-            ),
-            Text(
-               '$_operation',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            Padding(padding: EdgeInsets.all(15.0),
+              child: Text(
+                '$_operation',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)
+              ),
+            )
           ],
         ),
-          Row(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Column(
+              ButtonBar(
                 children: [
                   ElevatedButton(
                     onPressed: () {_updateOperation("7");},
                     child: Text("7"),
                   ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("4");},
-                    child: Text("4"),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("1");},
-                    child: Text("1"),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("0");},
-                    child: Text("0"),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Column(
-                children: [
                   ElevatedButton(
                     onPressed: () {_updateOperation("8");},
                     child: Text("8"),
                   ),
-                  SizedBox(height: 16),
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("8");},
+                    child: Text("8"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("+");},
+                    child: Text("+"),
+                  ),
+                ],
+              ),
+              ButtonBar(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("4");},
+                    child: Text("4"),
+                  ),
                   ElevatedButton(
                     onPressed: () {_updateOperation("5");},
                     child: Text("5"),
                   ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("2");},
-                    child: Text("2"),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: _clearOperation,
-                    child: Text("AC"),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("9");},
-                    child: Text("9"),
-                  ),
-                  SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {_updateOperation("6");},
                     child: Text("6"),
                   ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("3");},
-                    child: Text("3"),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("=");},
-                    child: Text("="),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("*");},
-                    child: Text("*"),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {_updateOperation("/");},
-                    child: Text("/"),
-                  ),
-                  SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {_updateOperation("-");},
                     child: Text("-"),
                   ),
-                  SizedBox(height: 16),
+                ],
+              ),
+              ButtonBar(
+                children: [
                   ElevatedButton(
-                    onPressed: () {_updateOperation("+");},
-                    child: Text("+"),
+                    onPressed: () {_updateOperation("1");},
+                    child: Text("1"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("2");},
+                    child: Text("2"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("3");},
+                    child: Text("3"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("*");},
+                    child: Text("*"),
+                  ),
+                ],
+              ),
+              ButtonBar(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("0");},
+                    child: Text("0"),
+                  ),
+                  ElevatedButton(
+                    onPressed: _clearOperation,
+                    child: Text("AC"),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("=");},
+                    child: Text("="),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {_updateOperation("/");},
+                    child: Text("/"),
                   ),
                 ],
               ),
